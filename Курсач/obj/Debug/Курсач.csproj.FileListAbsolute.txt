@@ -1,0 +1,12 @@
+C:\Users\Бухгалтерия\Desktop\Курсач\Курсач\bin\Debug\Курсач.exe.config
+C:\Users\Бухгалтерия\Desktop\Курсач\Курсач\bin\Debug\Курсач.exe
+C:\Users\Бухгалтерия\Desktop\Курсач\Курсач\bin\Debug\Курсач.pdb
+C:\Users\Бухгалтерия\Desktop\Курсач\Курсач\obj\Debug\Курсач.csprojAssemblyReference.cache
+C:\Users\Бухгалтерия\Desktop\Курсач\Курсач\obj\Debug\Курсач.Form1.resources
+C:\Users\Бухгалтерия\Desktop\Курсач\Курсач\obj\Debug\Курсач.Properties.Resources.resources
+C:\Users\Бухгалтерия\Desktop\Курсач\Курсач\obj\Debug\Курсач.csproj.GenerateResource.cache
+C:\Users\Бухгалтерия\Desktop\Курсач\Курсач\obj\Debug\Курсач.csproj.CoreCompileInputs.cache
+C:\Users\Бухгалтерия\Desktop\Курсач\Курсач\obj\Debug\Курсач.exe
+C:\Users\Бухгалтерия\Desktop\Курсач\Курсач\obj\Debug\Курсач.pdb
+C:\Users\Бухгалтерия\Desktop\Курсач\Курсач\obj\Debug\Курсач.Ticket.resources
+C:\Users\Бухгалтерия\Desktop\Курсач\Курсач\obj\Debug\Курсач.Cashbox.resources

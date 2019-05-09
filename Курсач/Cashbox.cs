@@ -13,8 +13,8 @@ namespace Курсач
 {
     public partial class Cashbox : Form
     {
-        private string _pathToCity = @"C:\Users\Бухгалтерия\Desktop\Курсач\Курсач\DataBase\city.txt";
-        private string _pathToTime = @"C:\Users\Бухгалтерия\Desktop\Курсач\Курсач\DataBase\time.txt";
+        private string _pathToCity = @"DataBase\city.txt";
+        private string _pathToTime = @"DataBase\time.txt";
         public Cashbox()
         {
             InitializeComponent();
@@ -56,6 +56,10 @@ namespace Курсач
         private void CreditOrder(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void ButtonShowTicket_Click(object sender, EventArgs e)
+        {
         }
     }
 }

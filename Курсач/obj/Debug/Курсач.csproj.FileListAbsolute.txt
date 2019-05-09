@@ -10,3 +10,14 @@ C:\Users\Бухгалтерия\Desktop\Курсач\Курсач\obj\Debug\Ку
 C:\Users\Бухгалтерия\Desktop\Курсач\Курсач\obj\Debug\Курсач.pdb
 C:\Users\Бухгалтерия\Desktop\Курсач\Курсач\obj\Debug\Курсач.Ticket.resources
 C:\Users\Бухгалтерия\Desktop\Курсач\Курсач\obj\Debug\Курсач.Cashbox.resources
+D:\Projects\C#\Bus_Station\Курсач\bin\Debug\Курсач.exe.config
+D:\Projects\C#\Bus_Station\Курсач\bin\Debug\Курсач.exe
+D:\Projects\C#\Bus_Station\Курсач\bin\Debug\Курсач.pdb
+D:\Projects\C#\Bus_Station\Курсач\obj\Debug\Курсач.csprojAssemblyReference.cache
+D:\Projects\C#\Bus_Station\Курсач\obj\Debug\Курсач.Cashbox.resources
+D:\Projects\C#\Bus_Station\Курсач\obj\Debug\Курсач.Form1.resources
+D:\Projects\C#\Bus_Station\Курсач\obj\Debug\Курсач.Properties.Resources.resources
+D:\Projects\C#\Bus_Station\Курсач\obj\Debug\Курсач.csproj.GenerateResource.cache
+D:\Projects\C#\Bus_Station\Курсач\obj\Debug\Курсач.csproj.CoreCompileInputs.cache
+D:\Projects\C#\Bus_Station\Курсач\obj\Debug\Курсач.exe
+D:\Projects\C#\Bus_Station\Курсач\obj\Debug\Курсач.pdb

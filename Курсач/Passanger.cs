@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace Курсач
 {
-    class Ticket
+    class Passanger
     {
-        public double Prise { get; set; }
-        public int SeatNumber { get; set; }
+        public List<Ticket> tickets;
 
-        public Ticket()
+        public Passanger()
         {
 
         }

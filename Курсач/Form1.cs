@@ -22,17 +22,10 @@ namespace Курсач
 
         }
 
-        private void ShowTicket(object sender, EventArgs e)
-        {
-            Ticket ticket = new Ticket();
-            ticket.Show();
-        }
-
         private void BuyTicket(object sender, EventArgs e)
         {
             Cashbox cashbox = new Cashbox();
             cashbox.Show();
-            buttonShowTicket.Enabled = true;
         }
 
         private void ExitProgram(object sender, EventArgs e)

@@ -46,26 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bus.cs" />
     <Compile Include="Cashbox.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Cashbox.Designer.cs">
       <DependentUpon>Cashbox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Flight.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Passanger.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Ticket.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Ticket.Designer.cs">
-      <DependentUpon>Ticket.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Ticket.cs" />
     <EmbeddedResource Include="Cashbox.resx">
       <DependentUpon>Cashbox.cs</DependentUpon>
     </EmbeddedResource>
@@ -81,9 +79,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Ticket.resx">
-      <DependentUpon>Ticket.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

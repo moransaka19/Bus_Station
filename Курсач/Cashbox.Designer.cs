@@ -31,6 +31,7 @@
             this.buttonCreditOrder = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.buttonShowTicket = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonCreditOrder
@@ -63,11 +64,22 @@
             this.comboBox2.TabIndex = 3;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.ComboBox2_SelectedIndexChanged);
             // 
+            // buttonShowTicket
+            // 
+            this.buttonShowTicket.Location = new System.Drawing.Point(279, 294);
+            this.buttonShowTicket.Name = "buttonShowTicket";
+            this.buttonShowTicket.Size = new System.Drawing.Size(113, 55);
+            this.buttonShowTicket.TabIndex = 4;
+            this.buttonShowTicket.Text = "Показать билет";
+            this.buttonShowTicket.UseVisualStyleBackColor = true;
+            this.buttonShowTicket.Click += new System.EventHandler(this.ButtonShowTicket_Click);
+            // 
             // Cashbox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(404, 361);
+            this.Controls.Add(this.buttonShowTicket);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.buttonCreditOrder);
@@ -81,5 +93,6 @@
         public System.Windows.Forms.ComboBox comboBox1;
         public System.Windows.Forms.ComboBox comboBox2;
         public System.Windows.Forms.Button buttonCreditOrder;
+        private System.Windows.Forms.Button buttonShowTicket;
     }
 }

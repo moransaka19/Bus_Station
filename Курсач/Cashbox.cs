@@ -15,6 +15,7 @@ namespace Курсач
     {
         private string _pathToCity = @"DataBase\city.txt";
         private string _pathToTime = @"DataBase\time.txt";
+        private string _pathToSchedule = @"DataBase\flights.txt";
         public Cashbox()
         {
             InitializeComponent();
@@ -60,6 +61,33 @@ namespace Курсач
 
         private void ButtonShowTicket_Click(object sender, EventArgs e)
         {
+        }
+
+        private void scheduleGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.scheduleGridView.Rows[e.RowIndex];
+                row.Cells["NumberOfFlight"].Value.ToString();
+                row.Cells["Point"].Value.ToString();
+                row.Cells["DepartureTime"].Value.ToString();
+                row.Cells["CountOfEmptySeats"].Value.ToString();
+            }
+        }
+
+        private void Update_Click(object sender, EventArgs e)
+        {
+            using (StreamReader sr = new StreamReader(_pathToSchedule, System.Text.Encoding.Default))
+            {
+                string line;
+                string[] flight;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    flight = line.Split(' ');
+                    flight[3] += flight[4]; 
+                    scheduleGridView.Rows.Add(flight);
+                }
+            }
         }
     }
 }

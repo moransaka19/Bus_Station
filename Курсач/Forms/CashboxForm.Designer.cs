@@ -1,6 +1,6 @@
 ﻿namespace Курсач
 {
-    partial class Cashbox
+    partial class CashboxForm
     {
         /// <summary>
         /// Required designer variable.
@@ -55,7 +55,7 @@
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(1, 27);
+            this.comboBox1.Location = new System.Drawing.Point(16, 27);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 2;
@@ -65,7 +65,7 @@
             // 
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(335, 27);
+            this.comboBox2.Location = new System.Drawing.Point(188, 27);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
             this.comboBox2.TabIndex = 3;
@@ -73,7 +73,7 @@
             // 
             // buttonShowTicket
             // 
-            this.buttonShowTicket.Location = new System.Drawing.Point(343, 311);
+            this.buttonShowTicket.Location = new System.Drawing.Point(479, 311);
             this.buttonShowTicket.Name = "buttonShowTicket";
             this.buttonShowTicket.Size = new System.Drawing.Size(113, 55);
             this.buttonShowTicket.TabIndex = 4;
@@ -91,16 +91,16 @@
             this.Point,
             this.DepartureTime,
             this.CountOfEmptySeats});
-            this.scheduleGridView.Location = new System.Drawing.Point(1, 66);
+            this.scheduleGridView.Location = new System.Drawing.Point(16, 66);
             this.scheduleGridView.Name = "scheduleGridView";
             this.scheduleGridView.ReadOnly = true;
-            this.scheduleGridView.Size = new System.Drawing.Size(522, 170);
+            this.scheduleGridView.Size = new System.Drawing.Size(576, 170);
             this.scheduleGridView.TabIndex = 5;
             this.scheduleGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.scheduleGridView_CellContentClick);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(216, 37);
+            this.button1.Location = new System.Drawing.Point(517, 27);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 6;
@@ -110,12 +110,14 @@
             // 
             // NumberOfFlight
             // 
+            this.NumberOfFlight.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.NumberOfFlight.HeaderText = "Номер рейса";
             this.NumberOfFlight.Name = "NumberOfFlight";
             this.NumberOfFlight.ReadOnly = true;
             // 
             // Point
             // 
+            this.Point.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Point.HeaderText = "Конечный пункт";
             this.Point.Name = "Point";
             this.Point.ReadOnly = true;

@@ -11,13 +11,23 @@ using System.Windows.Forms;
 
 namespace Курсач
 {
-    public partial class Cashbox : Form
+    public partial class CashboxForm : Form
     {
+        private User _user;
+
         private string _pathToCity = @"DataBase\city.txt";
         private string _pathToTime = @"DataBase\time.txt";
         private string _pathToSchedule = @"DataBase\flights.txt";
-        public Cashbox()
+
+        private string _numberOfFlight;
+        private string _point;
+        private string _departureTime;
+        private string _countOfEmptySeats;
+
+        public CashboxForm(User user)
         {
+            this._user = user;
+
             InitializeComponent();
             using (StreamReader sr = new StreamReader(_pathToCity, Encoding.Default))
             {
@@ -68,10 +78,10 @@ namespace Курсач
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = this.scheduleGridView.Rows[e.RowIndex];
-                row.Cells["NumberOfFlight"].Value.ToString();
-                row.Cells["Point"].Value.ToString();
-                row.Cells["DepartureTime"].Value.ToString();
-                row.Cells["CountOfEmptySeats"].Value.ToString();
+                _numberOfFlight = row.Cells["NumberOfFlight"].Value.ToString();
+                _point = row.Cells["Point"].Value.ToString();
+                _departureTime = row.Cells["DepartureTime"].Value.ToString();
+                _countOfEmptySeats = row.Cells["CountOfEmptySeats"].Value.ToString();
             }
         }
 

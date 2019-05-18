@@ -36,33 +36,35 @@ namespace Курсач
         {
             StreamReader sr = new StreamReader(_path);
             {
-                string[] user;
+                string[] temp;
                 string line;
                 while ((line = sr.ReadLine()) != null)
                 {
-                    user = line.Split(' ');
-                    if (user[0] == "admin" && user[1] == loginBox.Text &&
-                        user[2] == passwordBox.Text)
+                    temp = line.Split(' ');
+
+
+                    if (temp[0] == "admin" && temp[1] == loginBox.Text &&
+                        temp[2] == passwordBox.Text)
                     {
+                        User user = new User(temp[0], temp[1], temp[2]);
                         this.Hide();
-                        MessageBox.Show(user[0]);
-                        Cashbox cashbox = new Cashbox();
+                        CashboxForm cashbox = new CashboxForm(user);
                         cashbox.Show();
                         break;
                     }
                     else
                     {
-                        if (user[1] == loginBox.Text && user[2] == passwordBox.Text)
+                        if (temp[1] == loginBox.Text && temp[2] == passwordBox.Text)
                         {
                             this.Hide();
-                            MessageBox.Show(user[0]);
-                            Cashbox cashbox = new Cashbox();
+                            MessageBox.Show(temp[0]);
+                            CashboxForm cashbox = new CashboxForm(temp[0], temp[1]);
                             cashbox.Show();
                             break;
                         }
                         else
                         {
-                            MessageBox.Show("Аккаунта нахой НеТу");
+                            MessageBox.Show("Аккаунта Нету");
                         }
                     }
                 }

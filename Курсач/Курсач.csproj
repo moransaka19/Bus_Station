@@ -46,24 +46,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cashbox.cs">
+    <Compile Include="Forms\CashboxForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cashbox.Designer.cs">
-      <DependentUpon>Cashbox.cs</DependentUpon>
+    <Compile Include="Forms\CashboxForm.Designer.cs">
+      <DependentUpon>CashboxForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Log_in.cs">
+    <Compile Include="Forms\Log_in.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Log_in.Designer.cs">
+    <Compile Include="Forms\Log_in.Designer.cs">
       <DependentUpon>Log_in.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Cashbox.resx">
-      <DependentUpon>Cashbox.cs</DependentUpon>
+    <Compile Include="Servises\Cashbox.cs" />
+    <Compile Include="Servises\Flight.cs" />
+    <Compile Include="Servises\Ticket.cs" />
+    <Compile Include="Servises\User.cs" />
+    <EmbeddedResource Include="Forms\CashboxForm.resx">
+      <DependentUpon>CashboxForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Log_in.resx">
+    <EmbeddedResource Include="Forms\Log_in.resx">
       <DependentUpon>Log_in.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -88,5 +92,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

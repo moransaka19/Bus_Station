@@ -61,7 +61,6 @@
             this.loginBox.Name = "loginBox";
             this.loginBox.Size = new System.Drawing.Size(100, 20);
             this.loginBox.TabIndex = 3;
-            this.loginBox.TextChanged += new System.EventHandler(this.LoginBox_TextChanged);
             // 
             // passwordBox
             // 
@@ -70,7 +69,6 @@
             this.passwordBox.Size = new System.Drawing.Size(100, 20);
             this.passwordBox.TabIndex = 4;
             this.passwordBox.UseSystemPasswordChar = true;
-            this.passwordBox.TextChanged += new System.EventHandler(this.PasswordBox_TextChanged);
             // 
             // button1
             // 
@@ -95,7 +93,6 @@
             this.Controls.Add(this.label2);
             this.Name = "Log_in";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

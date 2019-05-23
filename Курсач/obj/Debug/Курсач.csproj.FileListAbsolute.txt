@@ -14,10 +14,10 @@ D:\Projects\C#\Bus_Station\Курсач\bin\Debug\Курсач.exe.config
 D:\Projects\C#\Bus_Station\Курсач\bin\Debug\Курсач.exe
 D:\Projects\C#\Bus_Station\Курсач\bin\Debug\Курсач.pdb
 D:\Projects\C#\Bus_Station\Курсач\obj\Debug\Курсач.csprojAssemblyReference.cache
-D:\Projects\C#\Bus_Station\Курсач\obj\Debug\Курсач.Cashbox.resources
 D:\Projects\C#\Bus_Station\Курсач\obj\Debug\Курсач.Properties.Resources.resources
 D:\Projects\C#\Bus_Station\Курсач\obj\Debug\Курсач.csproj.GenerateResource.cache
 D:\Projects\C#\Bus_Station\Курсач\obj\Debug\Курсач.csproj.CoreCompileInputs.cache
 D:\Projects\C#\Bus_Station\Курсач\obj\Debug\Курсач.exe
 D:\Projects\C#\Bus_Station\Курсач\obj\Debug\Курсач.pdb
 D:\Projects\c#\Bus_Station\Курсач\obj\Debug\Курсач.Log_in.resources
+D:\Projects\c#\Bus_Station\Курсач\obj\Debug\Курсач.CashboxForm.resources

@@ -58,12 +58,13 @@
     <Compile Include="Forms\Log_in.Designer.cs">
       <DependentUpon>Log_in.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Flight.cs" />
+    <Compile Include="Models\Ticket.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Servises\Cashbox.cs" />
-    <Compile Include="Servises\Flight.cs" />
-    <Compile Include="Servises\Ticket.cs" />
-    <Compile Include="Servises\User.cs" />
+    <Compile Include="Services\CashboxService.cs" />
+    <Compile Include="Services\FlightService.cs" />
     <EmbeddedResource Include="Forms\CashboxForm.resx">
       <DependentUpon>CashboxForm.cs</DependentUpon>
     </EmbeddedResource>

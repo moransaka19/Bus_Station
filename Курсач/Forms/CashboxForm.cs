@@ -1,32 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Курсач.Models;
+using Курсач.Services;
 
 namespace Курсач
 {
-    public partial class CashboxForm : Form
+    partial class CashboxForm : Form
     {
-        private User _user;
+        private FlightService _flightService;
 
         private string _pathToCity = @"DataBase\city.txt";
         private string _pathToTime = @"DataBase\time.txt";
-        private string _pathToSchedule = @"DataBase\flights.txt";
 
-        private string _numberOfFlight;
-        private string _point;
-        private string _departureTime;
-        private string _countOfEmptySeats;
+        private string _city;
+        private string _time;
 
-        public CashboxForm(User user)
+        public CashboxForm()
         {
-            this._user = user;
+            _flightService = new FlightService();
 
             InitializeComponent();
             using (StreamReader sr = new StreamReader(_pathToCity, Encoding.Default))
@@ -56,12 +50,12 @@ namespace Курсач
 
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedState = comboBox1.SelectedItem.ToString();
+            _city = comboBox1.SelectedItem.ToString();
         }
 
         private void ComboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedState = comboBox2.SelectedItem.ToString();
+            _time = comboBox2.SelectedItem.ToString();
         }
 
         private void CreditOrder(object sender, EventArgs e)
@@ -75,28 +69,27 @@ namespace Курсач
 
         private void scheduleGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = this.scheduleGridView.Rows[e.RowIndex];
-                _numberOfFlight = row.Cells["NumberOfFlight"].Value.ToString();
-                _point = row.Cells["Point"].Value.ToString();
-                _departureTime = row.Cells["DepartureTime"].Value.ToString();
-                _countOfEmptySeats = row.Cells["CountOfEmptySeats"].Value.ToString();
-            }
+            //if (e.RowIndex >= 0)
+            //{
+            //    DataGridViewRow row = this.scheduleGridView.Rows[e.RowIndex];
+            //    _numberOfFlight = row.Cells["NumberOfFlight"].Value.ToString();
+            //    _point = row.Cells["Point"].Value.ToString();
+            //    _departureTime = row.Cells["DepartureTime"].Value.ToString();
+            //    _countOfEmptySeats = row.Cells["CountOfEmptySeats"].Value.ToString();
+            //}
         }
 
         private void Update_Click(object sender, EventArgs e)
         {
-            using (StreamReader sr = new StreamReader(_pathToSchedule, System.Text.Encoding.Default))
+            scheduleGridView.Rows.Clear();
+
+            var flights = _flightService.GetAll().Where(f => 
+                f.Point == _city 
+                && f.DepartureTime > DateTime.Parse(_time));
+
+            foreach (var i in flights)
             {
-                string line;
-                string[] flight;
-                while ((line = sr.ReadLine()) != null)
-                {
-                    flight = line.Split(' ');
-                    flight[3] += flight[4]; 
-                    scheduleGridView.Rows.Add(flight);
-                }
+                scheduleGridView.Rows.Add(i.Id, $"{i.DepartureTime:hh:mm}", i.Point);
             }
         }
     }

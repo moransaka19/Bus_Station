@@ -8,10 +8,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Курсач.Models;
 
 namespace Курсач
 {
-    public partial class Log_in : Form
+    partial class Log_in : Form
     {
         private const string _path = @"DataBase\users.txt";
         public Log_in()
@@ -19,19 +20,6 @@ namespace Курсач
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-        }
-
-        private void LoginBox_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void PasswordBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        
         private void LogIn_Click(object sender, EventArgs e)
         {
             StreamReader sr = new StreamReader(_path);
@@ -46,10 +34,10 @@ namespace Курсач
                     if (temp[0] == "admin" && temp[1] == loginBox.Text &&
                         temp[2] == passwordBox.Text)
                     {
-                        User user = new User(temp[0], temp[1], temp[2]);
+                        User admin = new User(temp[0], temp[1]);
                         this.Hide();
-                        CashboxForm cashbox = new CashboxForm(user);
-                        cashbox.Show();
+                        CashboxForm cashboxForm = new CashboxForm();
+                        cashboxForm.Show();
                         break;
                     }
                     else
@@ -57,9 +45,9 @@ namespace Курсач
                         if (temp[1] == loginBox.Text && temp[2] == passwordBox.Text)
                         {
                             this.Hide();
-                            MessageBox.Show(temp[0]);
-                            CashboxForm cashbox = new CashboxForm(temp[0], temp[1]);
-                            cashbox.Show();
+                            User user = new User(temp[0], temp[1]);
+                            CashboxForm cashboxForm = new CashboxForm();
+                            cashboxForm.Show();
                             break;
                         }
                         else

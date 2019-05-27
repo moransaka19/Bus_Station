@@ -7,16 +7,19 @@ using Курсач.Models;
 
 namespace Курсач.Services
 {
-    class CashboxService
+    class TicketService
     {
         private string _dbPath;
 
-        public CashboxService()
+        public TicketService()
         {
             _dbPath = @"DataBase\";
         }
 
-       
-
+        public Ticket Create(int id, string point, DateTime departureTime)
+        {
+            Ticket ticket = new Ticket(departureTime, id, point);
+            return ticket;
+        }
     }
 }

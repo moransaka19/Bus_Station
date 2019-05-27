@@ -17,6 +17,8 @@ namespace Курсач.Models
         {
             Id = id;
             UserName = userName;
+
+            Tickets = new List<Ticket>();
         }
     }
 }

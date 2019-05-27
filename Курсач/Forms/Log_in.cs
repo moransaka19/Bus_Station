@@ -22,6 +22,7 @@ namespace Курсач
 
         private void LogIn_Click(object sender, EventArgs e)
         {
+            bool accountIsTrue = false;
             StreamReader sr = new StreamReader(_path);
             {
                 string[] temp;
@@ -34,28 +35,35 @@ namespace Курсач
                     if (temp[0] == "admin" && temp[1] == loginBox.Text &&
                         temp[2] == passwordBox.Text)
                     {
-                        User admin = new User(temp[0], temp[1]);
+                        accountIsTrue = true;
                         this.Hide();
-                        CashboxForm cashboxForm = new CashboxForm();
+
+                        User admin = new User(temp[0], temp[1]);
+                        CashboxForm cashboxForm = new CashboxForm(admin);
+
                         cashboxForm.Show();
+
                         break;
                     }
                     else
                     {
                         if (temp[1] == loginBox.Text && temp[2] == passwordBox.Text)
                         {
+                            accountIsTrue = true;
                             this.Hide();
+
                             User user = new User(temp[0], temp[1]);
-                            CashboxForm cashboxForm = new CashboxForm();
+                            CashboxForm cashboxForm = new CashboxForm(user);
+
                             cashboxForm.Show();
+
                             break;
-                        }
-                        else
-                        {
-                            MessageBox.Show("Аккаунта Нету");
                         }
                     }
                 }
+
+                if(!accountIsTrue)
+                    MessageBox.Show("Аккаунта Нету");
             }
         }
     }

@@ -10,7 +10,13 @@ namespace Курсач
 {
     partial class CashboxForm : Form
     {
+        public User User { get; set; }
+
+        private CashboxService _cashboxService;
         private FlightService _flightService;
+        private UserService _userService;
+        private TicketService _ticketService;
+
 
         private string _pathToCity = @"DataBase\city.txt";
         private string _pathToTime = @"DataBase\time.txt";
@@ -18,9 +24,19 @@ namespace Курсач
         private string _city;
         private string _time;
 
-        public CashboxForm()
+        private int _numberOfFlight;
+        private string _point;
+        private DateTime _departureTime;
+        private string _countOfEmptySeats;
+
+        public CashboxForm(User user)
         {
+            User = user;
+
             _flightService = new FlightService();
+            _cashboxService = new CashboxService();
+            _userService = new UserService(User);
+            _ticketService = new TicketService();
 
             InitializeComponent();
             using (StreamReader sr = new StreamReader(_pathToCity, Encoding.Default))
@@ -47,6 +63,10 @@ namespace Курсач
             comboBox2.SelectedIndexChanged += ComboBox2_SelectedIndexChanged;
         }
 
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
 
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -60,23 +80,24 @@ namespace Курсач
 
         private void CreditOrder(object sender, EventArgs e)
         {
-            this.Close();
+            _userService.SaveTicket(_ticketService.Create(_numberOfFlight, _point, _departureTime));
         }
 
         private void ButtonShowTicket_Click(object sender, EventArgs e)
         {
+            ///////
         }
 
         private void scheduleGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //if (e.RowIndex >= 0)
-            //{
-            //    DataGridViewRow row = this.scheduleGridView.Rows[e.RowIndex];
-            //    _numberOfFlight = row.Cells["NumberOfFlight"].Value.ToString();
-            //    _point = row.Cells["Point"].Value.ToString();
-            //    _departureTime = row.Cells["DepartureTime"].Value.ToString();
-            //    _countOfEmptySeats = row.Cells["CountOfEmptySeats"].Value.ToString();
-            //}
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.scheduleGridView.Rows[e.RowIndex];
+                _numberOfFlight = int.Parse(row.Cells["NumberOfFlight"].Value.ToString());
+                _point = row.Cells["Point"].Value.ToString();
+                _departureTime = DateTime.Parse(row.Cells["DepartureTime"].Value.ToString());
+                //_countOfEmptySeats = row.Cells["CountOfEmptySeats"].Value.ToString();
+            }
         }
 
         private void Update_Click(object sender, EventArgs e)
@@ -89,7 +110,7 @@ namespace Курсач
 
             foreach (var i in flights)
             {
-                scheduleGridView.Rows.Add(i.Id, $"{i.DepartureTime:hh:mm}", i.Point);
+                scheduleGridView.Rows.Add(i.Id, i.Point, $"{i.DepartureTime:hh:mm}");
             }
         }
     }

@@ -3,10 +3,10 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Курсач.Models;
-using Курсач.Services;
+using BusStation.Models;
+using BusStation.Services;
 
-namespace Курсач
+namespace BusStation
 {
     partial class CashboxForm : Form
     {
@@ -82,11 +82,6 @@ namespace Курсач
         {
             _userService.SaveTicket(_ticketService.Create(_numberOfFlight, _point, _departureTime));
             MessageBox.Show("Покупка совершена");
-        }
-
-        private void ButtonShowTicket_Click(object sender, EventArgs e)
-        {
-            ///////
         }
 
         private void scheduleGridView_CellClick(object sender, DataGridViewCellEventArgs e)

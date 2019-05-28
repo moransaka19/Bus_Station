@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Курсач.Models;
+using BusStation.Models;
 
-namespace Курсач.Services
+namespace BusStation.Services
 {
     class TicketService
     {

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Курсач.Properties
+namespace BusStation.Properties
 {
 
 

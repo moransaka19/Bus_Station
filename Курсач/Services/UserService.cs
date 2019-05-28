@@ -4,9 +4,9 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Курсач.Models;
+using BusStation.Models;
 
-namespace Курсач.Services
+namespace BusStation.Services
 {
     class UserService
     {

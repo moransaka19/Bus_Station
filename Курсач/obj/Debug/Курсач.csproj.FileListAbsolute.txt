@@ -19,5 +19,6 @@ D:\Projects\C#\Bus_Station\Курсач\obj\Debug\Курсач.csproj.GenerateRe
 D:\Projects\C#\Bus_Station\Курсач\obj\Debug\Курсач.csproj.CoreCompileInputs.cache
 D:\Projects\C#\Bus_Station\Курсач\obj\Debug\Курсач.exe
 D:\Projects\C#\Bus_Station\Курсач\obj\Debug\Курсач.pdb
-D:\Projects\c#\Bus_Station\Курсач\obj\Debug\Курсач.Log_in.resources
-D:\Projects\c#\Bus_Station\Курсач\obj\Debug\Курсач.CashboxForm.resources
+D:\Projects\c#\Bus_Station\Курсач\obj\Debug\BusStation.CashboxForm.resources
+D:\Projects\c#\Bus_Station\Курсач\obj\Debug\BusStation.Log_in.resources
+D:\Projects\c#\Bus_Station\Курсач\obj\Debug\Курсач.Forms.TicketsForm.resources

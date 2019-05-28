@@ -8,9 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Курсач.Models;
+using BusStation.Models;
 
-namespace Курсач
+namespace BusStation
 {
     partial class Log_in : Form
     {
@@ -65,6 +65,11 @@ namespace Курсач
                 if(!accountIsTrue)
                     MessageBox.Show("Аккаунта Нету");
             }
+        }
+
+        private void LoginBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

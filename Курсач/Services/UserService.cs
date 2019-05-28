@@ -18,6 +18,16 @@ namespace Курсач.Services
         {
             _user = user;
             _dpPath = @"DataBase\";
+
+            using (StreamReader sr = new StreamReader($"{_dpPath}{_user.Id}{_user.UserName}.txt", Encoding.Default))
+            {
+                string ticket;
+                while((ticket = sr.ReadLine()) != null)
+                {
+                    string[] ticketInfo = ticket.Split(' ');
+                    _user.Tickets.Add(new Ticket(DateTime.Parse(ticketInfo[1]), int.Parse(ticketInfo[0]), ticketInfo[2]));
+                }
+            }
         }
 
         public void SaveTicket(Ticket ticket)
@@ -25,7 +35,7 @@ namespace Курсач.Services
             _user.Tickets.Add(ticket);
 
             using (StreamWriter sw = new StreamWriter($"{_dpPath}{_user.Id}{_user.UserName}.txt", 
-                                                      true,
+                                                      false,
                                                       Encoding.Default))
             {
                 foreach (var i in _user.Tickets)

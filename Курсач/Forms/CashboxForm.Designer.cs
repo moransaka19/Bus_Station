@@ -49,7 +49,7 @@
             this.buttonCreditOrder.TabIndex = 1;
             this.buttonCreditOrder.Text = "Оформить покупку";
             this.buttonCreditOrder.UseVisualStyleBackColor = true;
-            this.buttonCreditOrder.Click += new System.EventHandler(this.CreditOrder);
+            this.buttonCreditOrder.Click += new System.EventHandler(this.MakePurchase);
             // 
             // comboBox1
             // 
@@ -96,7 +96,7 @@
             this.scheduleGridView.ReadOnly = true;
             this.scheduleGridView.Size = new System.Drawing.Size(576, 170);
             this.scheduleGridView.TabIndex = 5;
-            this.scheduleGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.scheduleGridView_CellContentClick);
+            this.scheduleGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.scheduleGridView_CellClick);
             // 
             // button1
             // 

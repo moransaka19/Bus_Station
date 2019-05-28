@@ -78,9 +78,10 @@ namespace Курсач
             _time = comboBox2.SelectedItem.ToString();
         }
 
-        private void CreditOrder(object sender, EventArgs e)
+        private void MakePurchase(object sender, EventArgs e)
         {
             _userService.SaveTicket(_ticketService.Create(_numberOfFlight, _point, _departureTime));
+            MessageBox.Show("Покупка совершена");
         }
 
         private void ButtonShowTicket_Click(object sender, EventArgs e)
@@ -88,7 +89,7 @@ namespace Курсач
             ///////
         }
 
-        private void scheduleGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void scheduleGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {

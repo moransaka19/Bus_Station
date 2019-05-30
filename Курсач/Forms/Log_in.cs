@@ -66,10 +66,5 @@ namespace BusStation
                     MessageBox.Show("Аккаунта Нету");
             }
         }
-
-        private void LoginBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

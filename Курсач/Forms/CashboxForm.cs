@@ -29,6 +29,8 @@ namespace BusStation
         private DateTime _departureTime;
         private string _countOfEmptySeats;
 
+        private int _id;
+
         public CashboxForm(User user)
         {
             User = user;
@@ -98,16 +100,42 @@ namespace BusStation
 
         private void Update_Click(object sender, EventArgs e)
         {
-            scheduleGridView.Rows.Clear();
+            Update();
+        }
 
-            var flights = _flightService.GetAll().Where(f => 
-                f.Point == _city 
+        private new void Update()
+        {
+            scheduleGridView.Rows.Clear();
+            ticketsGridView.Rows.Clear();
+
+            foreach (var i in User.Tickets)
+            {
+                ticketsGridView.Rows.Add(i.FlightNumber, i.DepartureTime, i.Point);
+            }
+
+            var flights = _flightService.GetAll().Where(f =>
+                f.Point == _city
                 && f.DepartureTime > DateTime.Parse(_time));
 
             foreach (var i in flights)
             {
                 scheduleGridView.Rows.Add(i.Id, i.Point, $"{i.DepartureTime:hh:mm}");
             }
+        }
+
+        private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.ticketsGridView.Rows[e.RowIndex];
+                _id = int.Parse(row.Cells["NumberFlight2"].Value.ToString());
+            }
+        }
+
+        private void ReturnTicket_Click(object sender, EventArgs e)
+        {
+            _userService.RemoveTicket(_id);
+            Update();
         }
     }
 }

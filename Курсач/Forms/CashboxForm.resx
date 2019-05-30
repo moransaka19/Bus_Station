@@ -129,4 +129,94 @@
   <metadata name="CountOfEmptySeats.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="NumberOfFlight.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Point.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="DepartureTime.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="CountOfEmptySeats.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAzJJREFUaEPt2VuoDVEcx/HjnltuyZ1IISI88UKRe5QiiZMHEYlSLilJiQe5RIQ8
+        SFE8CMUDpVweKCSFJCUUud/vt++v9tS/1ey9Z82s7TQ1v/p0Ovucs9b8z8xaa2ZNXZEiRRo8TUpfc5PW
+        mIHtuICn+IG/Je9xF8exCkPRCEnSovS1phmJw/iI6KCTeoDV6IS4qNBD+I076I3gGYgziDtAX2+xHi1h
+        Mxr293YiWBpjHb7DdlLOG3xxPivnHkYhylTYnx9BkLTDOdjGrUfYgynoBRtd5xoXC6ADKncpalwthlKT
+        QjrjNmzDkSsYC5+0wTJoUohrcxOCF6IzcQu2UdFBqLMsaYWt+AW3/YvO95kK0TpwFrZBuYyuCJUJeA23
+        HytTIWvhNngKzRAqOuP9oHXoM9z+IqkLGYCvsI1dhS6HENE6cQBxl1Wc1IWcgG1IY0KDPlQ0i9n2q0lV
+        yHD8gW1oLkJGU7TbRyWpCjkI28glJL038on+OdfwMIEd8IoWL3fBmoTcZTJsEc/RFLnLFthCgt6s/c+c
+        hy1kOnIZPSfYQvogl/mEqAhNj83RkNH4HAzvhfgmokI0NTZkdPA3oGN5hv5IHFWvVV28/rAGmYnonyqa
+        iHIZbVTYQjYjl9kHW8hS5DLR+IiMQe6iad/eVOp2vy1yF/ehTo++XtG8PT6BceiGWkSP2NoesoWsgFf0
+        6GkbqESnfj5CZwlsP9ob6wiv+BQiGpAhoy3UV7B9aL/MO76FZNrdcKJLSpsbtn1tSKS6hKsVch+6Q9au
+        o/ak9PuhshdufyuRKtUKeYERCBntKWvVdvvS/lnqdyxJLi2d7nqESAfEbQI+QRekjlvIO2x0PoucRtob
+        S03zC/EYbrs660OQKXGFKBsQt33zE0ehdSXJZdATml411ty2RGdiGDKnXCHKHHyA/bml/duT0G76IszG
+        PCzHbthnnTgaE90RJHofaBt/CZu+cJ/rs9L20xqkHtjlch1RJ8f0QUymwb079fUN+1GT94NKD+gNraZE
+        XWqVotdlOhhd23EH69JdrB6htT6EfDURNIMwC5oYdkFvZVXkNmicTER7FClSpIhv6ur+AbSH9PmofYwq
+        AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="button4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAA6ZJREFUaEPtmUvIDlEYxz9yp0QouaaIYsPGAuWywk4SCiXKBmUhySVCbKxc1yQW
+        FtjIQi4hl4Rcciu55X4LyfX/G9/zOXO+Ge+Zd8ZnFvOvX+97zjMzZ/7ve85zzplpCFB7MU3sFmfFA/FJ
+        vBU3xFGxXAwTebVOfBA/xXdxSvQWudVVPBRcOIRzYryoR8NF0jW3itzCyB1xSawRo0Uf0U50EkPEZLFT
+        PBbW+CHRXWTRFMG5R6LSn/LeqBSgteKHsJsw6DpZhLnF4oXg/LuCXzlUuY0sE6/Ea/FVhBhp0/iZpJ7i
+        pLDrZMU3ksYFkTh+6CYfhR2YZqSjeCToPmni39kn3IZDCTUCG0RMbcV5QfBg42eakf6CONnrb2IMMfit
+        0VCyGNkuYponCNwWDGa+5zWCBorPwhoOgXTeTcxw6tKIGWktbgkCMwW/JIP/pUhSFiNos3AbL5KYkbGC
+        StIsphDZZ+7vr82U1UgP8U24N1AUMSMbBZWbolJtZTWCjgv3BooiZuS0oHJiVKqteoysEO4NFEXMyH1B
+        Zb+oVFv1GGHscQ7p/V6BsDZrkmUVcn+ILKu9F6EzN+svzmGi/GcizdJI56hUWyQEmx9YBS8UtTRJcDxz
+        1aACIZE0yVLv4KgUpg5im+A82CO6iDTZPFU0sTHCBETl1KiUTdPFO8H5h6lIEUsJ9waKImaETRGVO6JS
+        dvFPHhOro1Kyrgr/JoogZmSooPKJCB3wWWTX/xfEjCAbvEuiUrE6IPwbKIpmRiYIAs8F+4mixPLHNm3s
+        xS96WKIhc/oxlkx2w2k0M4LYXxA8IYroYn3FU2GN8iDB1xhBzJburupaxiOWzvYr0B1IsfUKE1cE17IF
+        Y4sZQSOFHcTkNUBk1ThB4nAbhBY1wlMT90Bm7i0iNoOmiOy0XyQ9yID/asSge7AUZxU7W/Crs+yYI9gG
+        hMwTl8Uoj/mCGCb9GBnUv4ZPZiNlJZeRL8JPlfaP0BX92HVBrMXSLwoxkrQPsT0KhnyNEMRKMUZcKiNR
+        Ka7KSCO5jDwTpF6XWYIY+38/tkAQu+bUGUsFMRatfmylsDbTyGWkTOQywsMKNlIudBtipFg/xlsuYm+c
+        OoMn6sR4FeHHmECtzTSqMQKVkagUV2WkkVxGGJg8BnJZJIhh0o/xao/YTafOWCWI8bLVj/FQ3dpMI5eR
+        MlEZKRuVkbKRasRehCadVEZ4I5CqMyLppDLCqjtVvcR6savE8OYAE61EpRKqoeEX/qEpMnVUuIQAAAAA
+        SUVORK5CYII=
+</value>
+  </data>
+  <data name="button3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAoFJREFUaEPtmTFo1VAYhbPoIEIRHJwcXOriYlfHLtLZCq7VuY6CW4e6uLh0dhHE
+        pRQKRUQXhxYUhHYUBQcVkRZRQdBCe065B35+7m1uepM2wj3wUU7yv+SdvHeSl7Spqqoq1gTYOwKbYFSq
+        QcCo5IP8Azvgp/O/ghddgpwC547AGZAtH+Q1oK4B62eAnesSxL82lyWQLR9kHfBoXHf+ZvBi9EFyGX2Q
+        P+AD+Oz81+BFSZC/wPaOf7mPb8GLoiDH0ZFVQGn5kwPXNLeAnSsK8gZcArPOzwUvSoI8B7Z3K4D7uBu8
+        qB3pQkkQdUK9G6QjuZQEUScG7UguJUHUCfWudsTqJIJsg7fgvfMfgxedgpwF3Mhh8E3bHZDRdSRHF4Hd
+        ASkJsgamwLzz94MX0SAc7MoVQPUdJJdokNhgG58A1XeQoo7YgVyGClLUETuwC1Rk6/nm7NxQQYo6Ygd+
+        cEGQ9f4NK8gFoODiKcjVYB3hbxsV2nq/QwUpld8uf2O9AO+c3wpe9N6R00DBuzAJKB+kt47wyQiPALGe
+        N1F27rCO5JC6KXsJpoE6Ib8YvOi9I30HyaU1yG/AI0Cs9x9tKgg7xU+QT1is592knUsF+Q44f+wd8UF0
+        6uWV33rd54tUkKJ7djtQ2hFegfkJ3nHe30+kgmwAzteOiJPuCLf7DOgbIM9Pys6NviO9XUdySQUp7QiX
+        3wAPnH8UvBg8SC6pILnUIJ7/JgifivNssWyWWdqC8LTN178yyyxtQb6A2NlKZAfR9SP1SKgtSOpsJdqC
+        6Arvz1aiBvGMMgi/i57HgOJ/T2PrtaHzILb+IaAug9j6BUBdBbH19wDFAxFbfxtUVVW1qmn2AW62ri9o
+        nt/iAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <metadata name="NumberFlight2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="DepartureTime2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Point2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="NumberFlight2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="DepartureTime2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Point2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

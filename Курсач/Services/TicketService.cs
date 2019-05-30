@@ -18,8 +18,7 @@ namespace BusStation.Services
 
         public Ticket Create(int id, string point, DateTime departureTime)
         {
-            Ticket ticket = new Ticket(departureTime, id, point);
-            return ticket;
+            return new Ticket(departureTime, id, point);
         }
     }
 }

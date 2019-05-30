@@ -44,5 +44,21 @@ namespace BusStation.Services
                 }
             }
         }
+
+        public void RemoveTicket(int id)
+        {
+             var ticket = _user.Tickets.Where(i => id != i.FlightNumber);
+            _user.Tickets = ticket.ToList();
+
+             using (StreamWriter sw = new StreamWriter($"{_dpPath}{_user.Id}{_user.UserName}.txt",
+                                                      false,
+                                                      Encoding.Default))
+             {
+                foreach (var i in _user.Tickets)
+                {
+                    sw.WriteLine($"{i.FlightNumber.ToString()} {i.DepartureTime.ToShortTimeString()} {i.Point}");
+                }
+             }
+        }
     }
 }

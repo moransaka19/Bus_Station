@@ -41,7 +41,6 @@ namespace BusStation.Services
         {
             return GetAll()
                 .Where(predicate);
-
         }
     }
 }

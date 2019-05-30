@@ -84,6 +84,7 @@ namespace BusStation
         {
             _userService.SaveTicket(_ticketService.Create(_numberOfFlight, _point, _departureTime));
             MessageBox.Show("Покупка совершена");
+            Update();
         }
 
         private void scheduleGridView_CellClick(object sender, DataGridViewCellEventArgs e)

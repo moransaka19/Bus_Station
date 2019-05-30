@@ -18,14 +18,20 @@ namespace BusStation.Services
         {
             _user = user;
             _dpPath = @"DataBase\";
-
-            using (StreamReader sr = new StreamReader($"{_dpPath}{_user.Id}{_user.UserName}.txt", Encoding.Default))
+            if (!(File.Exists(_dpPath + _user.Id + _user.UserName + ".txt")))
             {
-                string ticket;
-                while((ticket = sr.ReadLine()) != null)
+                File.Create(_dpPath + _user.Id + _user.UserName + ".txt");
+            }
+            else
+            {
+                using (StreamReader sr = new StreamReader($"{_dpPath}{_user.Id}{_user.UserName}.txt", Encoding.Default))
                 {
-                    string[] ticketInfo = ticket.Split(' ');
-                    _user.Tickets.Add(new Ticket(DateTime.Parse(ticketInfo[1]), int.Parse(ticketInfo[0]), ticketInfo[2]));
+                    string ticket;
+                    while ((ticket = sr.ReadLine()) != null)
+                    {
+                        string[] ticketInfo = ticket.Split(' ');
+                        _user.Tickets.Add(new Ticket(DateTime.Parse(ticketInfo[1]), int.Parse(ticketInfo[0]), ticketInfo[2]));
+                    }
                 }
             }
         }
@@ -34,15 +40,19 @@ namespace BusStation.Services
         {
             _user.Tickets.Add(ticket);
 
-            using (StreamWriter sw = new StreamWriter($"{_dpPath}{_user.Id}{_user.UserName}.txt", 
-                                                      false,
-                                                      Encoding.Default))
+            try
             {
-                foreach (var i in _user.Tickets)
+                using (StreamWriter sw = new StreamWriter($"{_dpPath}{_user.Id}{_user.UserName}.txt",
+                                                     false,
+                                                     Encoding.Default))
                 {
-                    sw.WriteLine($"{i.FlightNumber.ToString()} {i.DepartureTime.ToShortTimeString()} {i.Point}");
+                    foreach (var i in _user.Tickets)
+                    {
+                        sw.WriteLine($"{i.FlightNumber.ToString()} {i.DepartureTime.ToShortTimeString()} {i.Point}");
+                    }
                 }
             }
+            catch { }
         }
 
         public void RemoveTicket(int id)

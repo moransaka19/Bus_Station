@@ -261,6 +261,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(763, 426);
             this.Controls.Add(this.tabControl1);
+            this.MaximizeBox = false;
             this.Name = "CashboxForm";
             this.Text = "Cashbox";
             ((System.ComponentModel.ISupportInitialize)(this.scheduleGridView)).EndInit();

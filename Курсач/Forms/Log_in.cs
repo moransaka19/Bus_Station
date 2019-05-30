@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusStation.Models;
+using Курсач.Forms;
 
 namespace BusStation
 {
@@ -23,7 +24,7 @@ namespace BusStation
         private void LogIn_Click(object sender, EventArgs e)
         {
             bool accountIsTrue = false;
-            StreamReader sr = new StreamReader(_path);
+            using (StreamReader sr = new StreamReader(_path, Encoding.Default))
             {
                 string[] temp;
                 string line;
@@ -62,9 +63,17 @@ namespace BusStation
                     }
                 }
 
-                if(!accountIsTrue)
+                if (!accountIsTrue)
                     MessageBox.Show("Аккаунта Нету");
             }
+        }
+
+        private void Register_Click(object sender, EventArgs e)
+        {
+            RegisterForm registerForm = new RegisterForm();
+            /////////////
+            this.Hide();
+            registerForm.Show();
         }
     }
 }

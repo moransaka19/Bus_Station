@@ -27,7 +27,7 @@ namespace BusStation
         private int _numberOfFlight;
         private string _point;
         private DateTime _departureTime;
-        private string _countOfEmptySeats;
+        private int _countOfSeats;
 
         private int _id;
 
@@ -63,6 +63,7 @@ namespace BusStation
             comboBox2.SelectedIndex = 0;
             comboBox1.SelectedIndexChanged += ComboBox1_SelectedIndexChanged;
             comboBox2.SelectedIndexChanged += ComboBox2_SelectedIndexChanged;
+            Update();
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
@@ -82,7 +83,7 @@ namespace BusStation
 
         private void MakePurchase(object sender, EventArgs e)
         {
-            _userService.SaveTicket(_ticketService.Create(_numberOfFlight, _point, _departureTime));
+            _userService.SaveTicket(_ticketService.Create(_numberOfFlight, _point, _departureTime, _countOfSeats));
             MessageBox.Show("Покупка совершена");
             Update();
         }
@@ -95,7 +96,7 @@ namespace BusStation
                 _numberOfFlight = int.Parse(row.Cells["NumberOfFlight"].Value.ToString());
                 _point = row.Cells["Point"].Value.ToString();
                 _departureTime = DateTime.Parse(row.Cells["DepartureTime"].Value.ToString());
-                //_countOfEmptySeats = row.Cells["CountOfEmptySeats"].Value.ToString();
+                _countOfSeats = int.Parse(row.Cells["CountOfEmptySeats"].Value.ToString());
             }
         }
 
@@ -120,7 +121,7 @@ namespace BusStation
 
             foreach (var i in flights)
             {
-                scheduleGridView.Rows.Add(i.Id, i.Point, $"{i.DepartureTime:hh:mm}");
+                scheduleGridView.Rows.Add(i.Id, i.Point, $"{i.DepartureTime:hh:mm}", i.CountSeats);
             }
         }
 

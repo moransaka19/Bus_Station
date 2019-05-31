@@ -10,7 +10,7 @@ namespace BusStation.Models
     {
         public DateTime DepartureTime { get; set; }
         public int FlightNumber { get; set; }
-        //private int _numberOfSeat;
+        //public int NumberOfSeat { get; set; }
         public string Point { get; set; }
 
         public Ticket(DateTime departureTime, int flightNumber, string point)
@@ -18,6 +18,7 @@ namespace BusStation.Models
             DepartureTime = departureTime;
             FlightNumber = flightNumber;
             Point = point;
+            //NumberOfSeat = numberOFSeat;
         }
     }
 }

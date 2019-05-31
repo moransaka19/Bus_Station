@@ -52,11 +52,11 @@
     <Compile Include="Forms\CashboxForm.Designer.cs">
       <DependentUpon>CashboxForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Log_in.cs">
+    <Compile Include="Forms\LogInForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Log_in.Designer.cs">
-      <DependentUpon>Log_in.cs</DependentUpon>
+    <Compile Include="Forms\LogInForm.Designer.cs">
+      <DependentUpon>LogInForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\RegisterForm.cs">
       <SubType>Form</SubType>
@@ -76,8 +76,8 @@
     <EmbeddedResource Include="Forms\CashboxForm.resx">
       <DependentUpon>CashboxForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Log_in.resx">
-      <DependentUpon>Log_in.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\LogInForm.resx">
+      <DependentUpon>LogInForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>

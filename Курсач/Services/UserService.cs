@@ -51,6 +51,28 @@ namespace BusStation.Services
                         sw.WriteLine($"{i.FlightNumber.ToString()} {i.DepartureTime.ToShortTimeString()} {i.Point}");
                     }
                 }
+
+                FlightService flightService = new FlightService();
+
+                var flights = flightService
+                    .GetAll()
+                    .Select(f =>
+                    {
+                        if (f.Id == ticket.FlightNumber)
+                            f.CountSeats++;
+
+                        return f;
+                    });
+
+                using (StreamWriter sw = new StreamWriter($"{_dpPath}flights.txt", false, Encoding.Default))
+                {
+                    
+
+                    foreach (var f in flights)
+                    {
+                        sw.WriteLine($"{f.Id.ToString()} {f.Point} {f.DepartureTime} {f.CountSeats}");
+                    }
+                }
             }
             catch { }
         }

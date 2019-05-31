@@ -1,6 +1,6 @@
 ﻿namespace BusStation
 {
-    partial class Log_in
+    partial class LogInForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.

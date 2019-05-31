@@ -13,10 +13,10 @@ using Курсач.Forms;
 
 namespace BusStation
 {
-    partial class Log_in : Form
+    partial class LogInForm : Form
     {
         private const string _path = @"DataBase\users.txt";
-        public Log_in()
+        public LogInForm()
         {
             InitializeComponent();
         }

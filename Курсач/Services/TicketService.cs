@@ -16,7 +16,7 @@ namespace BusStation.Services
             _dbPath = @"DataBase\";
         }
 
-        public Ticket Create(int id, string point, DateTime departureTime)
+        public Ticket Create(int id, string point, DateTime departureTime, int numberOfSeats)
         {
             return new Ticket(departureTime, id, point);
         }

@@ -112,7 +112,7 @@ namespace BusStation
 
             foreach (var i in User.Tickets)
             {
-                ticketsGridView.Rows.Add(i.FlightNumber, i.DepartureTime, i.Point);
+                ticketsGridView.Rows.Add(i.FlightNumber, i.DepartureTime.ToShortDateString(), i.DepartureTime.ToShortTimeString(), i.Point);
             }
 
             var flights = _flightService.GetAll().Where(f =>
@@ -121,7 +121,7 @@ namespace BusStation
 
             foreach (var i in flights)
             {
-                scheduleGridView.Rows.Add(i.Id, i.Point, $"{i.DepartureTime:hh:mm}", i.CountSeats);
+                scheduleGridView.Rows.Add(i.Id, i.Point, i.DepartureTime.ToShortDateString(), i.DepartureTime.ToShortTimeString(), i.CountSeats);
             }
         }
 

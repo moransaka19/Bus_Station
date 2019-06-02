@@ -34,6 +34,7 @@
             this.scheduleGridView = new System.Windows.Forms.DataGridView();
             this.NumberOfFlight = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Point = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DepartureDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DepartureTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CountOfEmptySeats = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
@@ -46,6 +47,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.ticketsGridView = new System.Windows.Forms.DataGridView();
             this.NumberFlight2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DepartureDate2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DepartureTime2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Point2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.scheduleGridView)).BeginInit();
@@ -84,6 +86,7 @@
             this.scheduleGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NumberOfFlight,
             this.Point,
+            this.DepartureDate,
             this.DepartureTime,
             this.CountOfEmptySeats});
             this.scheduleGridView.Location = new System.Drawing.Point(6, 72);
@@ -107,14 +110,23 @@
             this.Point.Name = "Point";
             this.Point.ReadOnly = true;
             // 
+            // DepartureDate
+            // 
+            this.DepartureDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DepartureDate.HeaderText = "Дата отправления";
+            this.DepartureDate.Name = "DepartureDate";
+            this.DepartureDate.ReadOnly = true;
+            // 
             // DepartureTime
             // 
+            this.DepartureTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.DepartureTime.HeaderText = "Время отправления";
             this.DepartureTime.Name = "DepartureTime";
             this.DepartureTime.ReadOnly = true;
             // 
             // CountOfEmptySeats
             // 
+            this.CountOfEmptySeats.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.CountOfEmptySeats.HeaderText = "Количество пустых мест";
             this.CountOfEmptySeats.Name = "CountOfEmptySeats";
             this.CountOfEmptySeats.ReadOnly = true;
@@ -225,6 +237,7 @@
             this.ticketsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ticketsGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NumberFlight2,
+            this.DepartureDate2,
             this.DepartureTime2,
             this.Point2});
             this.ticketsGridView.Location = new System.Drawing.Point(8, 6);
@@ -240,6 +253,13 @@
             this.NumberFlight2.HeaderText = "Номер рейса";
             this.NumberFlight2.Name = "NumberFlight2";
             this.NumberFlight2.ReadOnly = true;
+            // 
+            // DepartureDate2
+            // 
+            this.DepartureDate2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DepartureDate2.HeaderText = "Дата отправления";
+            this.DepartureDate2.Name = "DepartureDate2";
+            this.DepartureDate2.ReadOnly = true;
             // 
             // DepartureTime2
             // 
@@ -278,10 +298,6 @@
         public System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.DataGridView scheduleGridView;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NumberOfFlight;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Point;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DepartureTime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CountOfEmptySeats;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
@@ -290,7 +306,13 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridView ticketsGridView;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumberOfFlight;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Point;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DepartureDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DepartureTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CountOfEmptySeats;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumberFlight2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DepartureDate2;
         private System.Windows.Forms.DataGridViewTextBoxColumn DepartureTime2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Point2;
     }

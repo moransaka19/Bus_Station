@@ -18,6 +18,7 @@ namespace BusStation.Services
         {
             _user = user;
             _dpPath = @"DataBase\";
+
             if (!(File.Exists(_dpPath + _user.Id + _user.UserName + ".txt")))
             {
                 File.Create(_dpPath + _user.Id + _user.UserName + ".txt");
@@ -27,6 +28,7 @@ namespace BusStation.Services
                 using (StreamReader sr = new StreamReader($"{_dpPath}{_user.Id}{_user.UserName}.txt", Encoding.Default))
                 {
                     string ticket;
+
                     while ((ticket = sr.ReadLine()) != null)
                     {
                         string[] ticketInfo = ticket.Split(' ');
@@ -43,38 +45,38 @@ namespace BusStation.Services
             try
             {
                 using (StreamWriter sw = new StreamWriter($"{_dpPath}{_user.Id}{_user.UserName}.txt",
-                                                     false,
-                                                     Encoding.Default))
+                                                    false,
+                                                    Encoding.Default))
                 {
                     foreach (var i in _user.Tickets)
                     {
                         sw.WriteLine($"{i.FlightNumber.ToString()} {i.DepartureTime.ToShortTimeString()} {i.Point}");
                     }
                 }
-
-                FlightService flightService = new FlightService();
-
-                var flights = flightService
-                    .GetAll()
-                    .Select(f =>
-                    {
-                        if (f.Id == ticket.FlightNumber)
-                            f.CountSeats++;
-
-                        return f;
-                    });
-
-                using (StreamWriter sw = new StreamWriter($"{_dpPath}flights.txt", false, Encoding.Default))
-                {
-                    
-
-                    foreach (var f in flights)
-                    {
-                        sw.WriteLine($"{f.Id.ToString()} {f.Point} {f.DepartureTime} {f.CountSeats}");
-                    }
-                }
             }
             catch { }
+            
+            FlightService flightService = new FlightService();
+
+            var flights = flightService
+                .GetAll()
+                .Select(f =>
+                {
+                    if (f.Id == ticket.FlightNumber)
+                        f.CountSeats--;
+
+                    return f;
+                });
+
+            using (StreamWriter sw = new StreamWriter($"{_dpPath}flights.txt", false, Encoding.Default))
+            {
+                    
+
+                foreach (var f in flights)
+                {
+                    sw.WriteLine($"{f.Id.ToString()} {f.Point} {f.DepartureTime} {f.CountSeats}");
+                }
+            }
         }
 
         public void RemoveTicket(int id)
@@ -82,15 +84,41 @@ namespace BusStation.Services
              var ticket = _user.Tickets.Where(i => id != i.FlightNumber);
             _user.Tickets = ticket.ToList();
 
-             using (StreamWriter sw = new StreamWriter($"{_dpPath}{_user.Id}{_user.UserName}.txt",
-                                                      false,
-                                                      Encoding.Default))
-             {
-                foreach (var i in _user.Tickets)
+            try
+            {
+                using (StreamWriter sw = new StreamWriter($"{_dpPath}{_user.Id}{_user.UserName}.txt",
+                                                   false,
+                                                   Encoding.Default))
                 {
-                    sw.WriteLine($"{i.FlightNumber.ToString()} {i.DepartureTime.ToShortTimeString()} {i.Point}");
+                    foreach (var i in _user.Tickets)
+                    {
+                        sw.WriteLine($"{i.FlightNumber.ToString()} {i.DepartureTime.ToShortTimeString()} {i.Point}");
+                    }
                 }
-             }
+            }
+            catch { }
+
+            FlightService flightService = new FlightService();
+
+            var flights = flightService
+                .GetAll()
+                .Select(f =>
+                {
+                    if (id == f.Id)
+                        f.CountSeats++;
+
+                    return f;
+                });
+
+            using (StreamWriter sw = new StreamWriter($"{_dpPath}flights.txt", false, Encoding.Default))
+            {
+
+
+                foreach (var f in flights)
+                {
+                    sw.WriteLine($"{f.Id.ToString()} {f.Point} {f.DepartureTime} {f.CountSeats}");
+                }
+            }
         }
     }
 }

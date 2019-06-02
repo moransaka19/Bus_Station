@@ -29,7 +29,7 @@ namespace BusStation.Services
 
                     flights.Add(new Flight(
                         int.Parse(flightInfo[0]),
-                        DateTime.Parse(flightInfo[3]),
+                        DateTime.Parse($"{flightInfo[2]} {flightInfo[3]}"),
                         flightInfo[1],
                         int.Parse(flightInfo[4])) 
                         );

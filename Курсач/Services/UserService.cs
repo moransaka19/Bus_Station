@@ -21,7 +21,7 @@ namespace BusStation.Services
 
             if (!(File.Exists(_dpPath + _user.Id + _user.UserName + ".txt")))
             {
-                File.Create(_dpPath + _user.Id + _user.UserName + ".txt");
+                using (FileStream fs = File.Create(_dpPath + _user.Id + _user.UserName + ".txt"));
             }
             else
             {
@@ -42,19 +42,15 @@ namespace BusStation.Services
         {
             _user.Tickets.Add(ticket);
 
-            try
+            using (StreamWriter sw = new StreamWriter($"{_dpPath}{_user.Id}{_user.UserName}.txt",
+                                                false,
+                                                Encoding.Default))
             {
-                using (StreamWriter sw = new StreamWriter($"{_dpPath}{_user.Id}{_user.UserName}.txt",
-                                                    false,
-                                                    Encoding.Default))
+                foreach (var i in _user.Tickets)
                 {
-                    foreach (var i in _user.Tickets)
-                    {
-                        sw.WriteLine($"{i.FlightNumber.ToString()} {i.DepartureTime.ToShortTimeString()} {i.Point}");
-                    }
+                    sw.WriteLine($"{i.FlightNumber.ToString()} {i.DepartureTime.ToShortDateString()} {i.DepartureTime.ToShortTimeString()} {i.Point}");
                 }
             }
-            catch { }
             
             FlightService flightService = new FlightService();
 
@@ -70,8 +66,6 @@ namespace BusStation.Services
 
             using (StreamWriter sw = new StreamWriter($"{_dpPath}flights.txt", false, Encoding.Default))
             {
-                    
-
                 foreach (var f in flights)
                 {
                     sw.WriteLine($"{f.Id.ToString()} {f.Point} {f.DepartureTime} {f.CountSeats}");
@@ -84,20 +78,16 @@ namespace BusStation.Services
              var ticket = _user.Tickets.Where(i => id != i.FlightNumber);
             _user.Tickets = ticket.ToList();
 
-            try
+            using (StreamWriter sw = new StreamWriter($"{_dpPath}{_user.Id}{_user.UserName}.txt",
+                                                false,
+                                                Encoding.Default))
             {
-                using (StreamWriter sw = new StreamWriter($"{_dpPath}{_user.Id}{_user.UserName}.txt",
-                                                   false,
-                                                   Encoding.Default))
+                foreach (var i in _user.Tickets)
                 {
-                    foreach (var i in _user.Tickets)
-                    {
-                        sw.WriteLine($"{i.FlightNumber.ToString()} {i.DepartureTime.ToShortTimeString()} {i.Point}");
-                    }
+                    sw.WriteLine($"{i.FlightNumber.ToString()} {i.DepartureTime.ToShortTimeString()} {i.Point}");
                 }
             }
-            catch { }
-
+           
             FlightService flightService = new FlightService();
 
             var flights = flightService

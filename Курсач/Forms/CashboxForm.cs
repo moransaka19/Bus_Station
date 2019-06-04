@@ -23,6 +23,7 @@ namespace BusStation
 
         private string _city;
         private string _time;
+        private string _date;
 
         private int _numberOfFlight;
         private string _point;
@@ -117,7 +118,7 @@ namespace BusStation
 
             var flights = _flightService.GetAll().Where(f =>
                 f.Point == _city
-                && f.DepartureTime > DateTime.Parse(_time));
+                && f.DepartureTime > DateTime.Parse($"{_date} {_time}"));
 
             foreach (var i in flights)
             {
@@ -138,6 +139,11 @@ namespace BusStation
         {
             _userService.RemoveTicket(_id);
             Update();
+        }
+
+        private void DateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            _date = dateTimePicker1.Value.ToShortDateString();
         }
     }
 }

@@ -96,7 +96,7 @@ namespace BusStation
                 DataGridViewRow row = this.scheduleGridView.Rows[e.RowIndex];
                 _numberOfFlight = int.Parse(row.Cells["NumberOfFlight"].Value.ToString());
                 _point = row.Cells["Point"].Value.ToString();
-                _departureTime = DateTime.Parse(row.Cells["DepartureTime"].Value.ToString());
+                _departureTime = DateTime.Parse(row.Cells["DepartureDate"].Value.ToString() +" "+ row.Cells["DepartureTime"].Value.ToString());
                 _countOfSeats = int.Parse(row.Cells["CountOfEmptySeats"].Value.ToString());
             }
         }

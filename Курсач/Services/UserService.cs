@@ -48,7 +48,7 @@ namespace BusStation.Services
             {
                 foreach (var i in _user.Tickets)
                 {
-                    sw.WriteLine($"{i.FlightNumber.ToString()} {i.DepartureTime.ToShortDateString()} {i.DepartureTime.ToShortTimeString()} {i.Point}");
+                    sw.WriteLine($"{i.FlightNumber.ToString()} {i.DepartureTime.ToString()} {i.Point}");
                 }
             }
             

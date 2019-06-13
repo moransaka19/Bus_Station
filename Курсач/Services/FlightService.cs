@@ -29,14 +29,14 @@ namespace BusStation.Services
 
                     flights.Add(new Flight(
                         int.Parse(flightInfo[0]),
-                        DateTime.Parse($"{flightInfo[2]} {flightInfo[3]}"),
+                        new DateTime(long.Parse(flightInfo[2])),
                         flightInfo[1],
-                        int.Parse(flightInfo[4])) 
+                        int.Parse(flightInfo[3])) 
                         );
                 }
             }
 
-            return flights;
+            return flights.Where(f => f.CountSeats > 0);
         }
 
         public IEnumerable<Flight> GetAll(Func<Flight, bool> predicate)

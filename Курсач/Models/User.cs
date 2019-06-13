@@ -8,15 +8,25 @@ namespace BusStation.Models
 {
     class User
     {
-        public string Id { get; set; }
-        public string UserName { get; set; }
+        public int Id { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
 
         public ICollection<Ticket> Tickets { get; set; }
 
-        public User(string id, string userName)
+        public User(int id, string username)
         {
             Id = id;
-            UserName = userName;
+            Username = username;
+
+            Tickets = new List<Ticket>();
+        }
+
+        public User(int id, string username, string password)
+        {
+            Id = id;
+            Username = username;
+            Password = password;
 
             Tickets = new List<Ticket>();
         }

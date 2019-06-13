@@ -38,7 +38,8 @@ namespace BusStation
 
             _flightService = new FlightService();
             _cashboxService = new CashboxService();
-            _userService = new UserService(User);
+            _userService = new UserService();
+            _userService.CreateUserFile(user);
             _ticketService = new TicketService();
 
             InitializeComponent();
@@ -84,7 +85,7 @@ namespace BusStation
 
         private void MakePurchase(object sender, EventArgs e)
         {
-            _userService.SaveTicket(_ticketService.Create(_numberOfFlight, _point, _departureTime, _countOfSeats));
+            _userService.Save(_ticketService.Create(_numberOfFlight, _point, _departureTime, _countOfSeats));
             MessageBox.Show("Покупка совершена");
             Update();
         }
@@ -94,10 +95,10 @@ namespace BusStation
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = this.scheduleGridView.Rows[e.RowIndex];
-                _numberOfFlight = int.Parse(row.Cells["NumberOfFlight"].Value.ToString());
+                _numberOfFlight = (int)(row.Cells["NumberOfFlight"].Value);
                 _point = row.Cells["Point"].Value.ToString();
                 _departureTime = DateTime.Parse(row.Cells["DepartureDate"].Value.ToString() +" "+ row.Cells["DepartureTime"].Value.ToString());
-                _countOfSeats = int.Parse(row.Cells["CountOfEmptySeats"].Value.ToString());
+                _countOfSeats = (int)(row.Cells["CountOfEmptySeats"].Value);
             }
         }
 
@@ -143,7 +144,13 @@ namespace BusStation
 
         private void DateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
+            dateTimePicker1.MinDate = DateTime.Now;
             _date = dateTimePicker1.Value.ToShortDateString();
+        }
+
+        private void ScheduleGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

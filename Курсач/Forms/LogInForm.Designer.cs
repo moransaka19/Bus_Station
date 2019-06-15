@@ -97,7 +97,7 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.Register_Click);
             // 
-            // Log_in
+            // LogInForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -109,8 +109,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.MaximizeBox = false;
-            this.Name = "Log_in";
-            this.Text = "Автостанция";
+            this.Name = "LogInForm";
+            this.Text = "Авторизация";
             this.ResumeLayout(false);
             this.PerformLayout();
 

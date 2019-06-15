@@ -79,10 +79,11 @@ namespace BusStation.Services
             }
         }
 
-        public void RemoveTicket(int id)
+        public bool RemoveTicket(int id)
         {
-            var ticket = _user.Tickets.Where(i => id != i.FlightNumber);
-            _user.Tickets = ticket.ToList();
+            var checkTicket = _user.Tickets.Where(t => t.FlightNumber == id && t.DepartureTime < DateTime.Now).ToList();
+
+            _user.Tickets = _user.Tickets.Where(i => id != i.FlightNumber).ToList();
 
             using (StreamWriter sw = new StreamWriter($"{_dpPath}{_user.Id}{_user.Username}.txt",
                                                 false,
@@ -90,7 +91,7 @@ namespace BusStation.Services
             {
                 foreach (var i in _user.Tickets)
                 {
-                    sw.WriteLine($"{i.FlightNumber.ToString()} {i.DepartureTime.ToShortTimeString()} {i.Point}");
+                    sw.WriteLine($"{i.FlightNumber.ToString()} {i.DepartureTime.Ticks} {i.Point}");
                 }
             }
 
@@ -110,8 +111,17 @@ namespace BusStation.Services
             {
                 foreach (var f in flights)
                 {
-                    sw.WriteLine($"{f.Id.ToString()} {f.Point} {f.DepartureTime} {f.CountSeats}");
+                    sw.WriteLine($"{f.Id.ToString()} {f.Point} {f.DepartureTime.Ticks} {f.CountSeats}");
                 }
+            }
+
+            if (checkTicket.Count == 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
 

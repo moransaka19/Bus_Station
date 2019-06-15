@@ -96,7 +96,6 @@
             this.scheduleGridView.Size = new System.Drawing.Size(737, 264);
             this.scheduleGridView.TabIndex = 5;
             this.scheduleGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.scheduleGridView_CellClick);
-            this.scheduleGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ScheduleGridView_CellContentClick);
             // 
             // NumberOfFlight
             // 
@@ -295,7 +294,7 @@
             this.Controls.Add(this.tabControl1);
             this.MaximizeBox = false;
             this.Name = "CashboxForm";
-            this.Text = "Cashbox";
+            this.Text = "Личный кабинет";
             ((System.ComponentModel.ISupportInitialize)(this.scheduleGridView)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

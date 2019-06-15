@@ -119,7 +119,7 @@ namespace BusStation
 
             var flights = _flightService.GetAll().Where(f =>
                 f.Point == _city
-                && f.DepartureTime > DateTime.Parse($"{_date} {_time}"));
+                && f.DepartureTime >= DateTime.Parse($"{_date} {_time}"));
 
             foreach (var i in flights)
             {
@@ -138,7 +138,15 @@ namespace BusStation
 
         private void ReturnTicket_Click(object sender, EventArgs e)
         {
-            _userService.RemoveTicket(_id);
+            if (_userService.RemoveTicket(_id))
+            {
+                MessageBox.Show("Билет был успешно возращен");
+            }
+            else
+            {
+                MessageBox.Show("Билет просрочен и был успешно удален");
+            }
+
             Update();
         }
 
@@ -146,11 +154,6 @@ namespace BusStation
         {
             dateTimePicker1.MinDate = DateTime.Now;
             _date = dateTimePicker1.Value.ToShortDateString();
-        }
-
-        private void ScheduleGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

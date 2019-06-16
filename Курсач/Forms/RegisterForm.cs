@@ -63,6 +63,12 @@ namespace Курсач.Forms
 
         private bool CheckInput()
         {
+            if (LoginBox.Text == "" || PasswordBox.Text == "" || RetryPasswordBox.Text == "")
+            {
+                MessageBox.Show("Не все поля заполнены");
+                return false;
+            }
+
             if (_userService.CheckUsername(LoginBox.Text))
             {
                 MessageBox.Show("Пользователь с таким именем уже существует, выбирите другое имя");

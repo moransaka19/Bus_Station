@@ -38,7 +38,7 @@ namespace BusStation.Services
                     while ((ticket = sr.ReadLine()) != null)
                     {
                         string[] ticketInfo = ticket.Split(' ');
-                        _user.Tickets.Add(new Ticket(new DateTime(long.Parse(ticketInfo[1])), int.Parse(ticketInfo[0]), ticketInfo[2]));
+                        _user.Tickets.Add(new Ticket(int.Parse(ticketInfo[0]), new DateTime(long.Parse(ticketInfo[2])), int.Parse(ticketInfo[1]), ticketInfo[3]));
                     }
                 }
             }
@@ -54,7 +54,7 @@ namespace BusStation.Services
             {
                 foreach (var i in _user.Tickets)
                 {
-                    sw.WriteLine($"{i.FlightNumber.ToString()} {i.DepartureTime.Ticks} {i.Point}");
+                    sw.WriteLine($"{i.Id} {i.FlightNumber} {i.DepartureTime.Ticks} {i.Point}");
                 }
             }
             
@@ -74,16 +74,16 @@ namespace BusStation.Services
             {
                 foreach (var f in flights)
                 {
-                    sw.WriteLine($"{f.Id.ToString()} {f.Point} {f.DepartureTime.Ticks} {f.CountSeats}");
+                    sw.WriteLine($"{f.Id} {f.Point} {f.DepartureTime.Ticks} {f.CountSeats}");
                 }
             }
         }
 
-        public bool RemoveTicket(int id)
+        public bool RemoveTicket(int id, int numberOfFlight)
         {
-            var checkTicket = _user.Tickets.Where(t => t.FlightNumber == id && t.DepartureTime < DateTime.Now).ToList();
+            var checkTicket = _user.Tickets.Where(t => t.Id == id && t.DepartureTime < DateTime.Now).ToList();
 
-            _user.Tickets = _user.Tickets.Where(i => id != i.FlightNumber).ToList();
+            _user.Tickets = _user.Tickets.Where(i => id != i.Id).ToList();
 
             using (StreamWriter sw = new StreamWriter($"{_dpPath}{_user.Id}{_user.Username}.txt",
                                                 false,
@@ -91,7 +91,7 @@ namespace BusStation.Services
             {
                 foreach (var i in _user.Tickets)
                 {
-                    sw.WriteLine($"{i.FlightNumber.ToString()} {i.DepartureTime.Ticks} {i.Point}");
+                    sw.WriteLine($"{i.FlightNumber} {i.DepartureTime.Ticks} {i.Point}");
                 }
             }
 
@@ -101,7 +101,7 @@ namespace BusStation.Services
                 .GetAll()
                 .Select(f =>
                 {
-                    if (id == f.Id)
+                    if (numberOfFlight == f.Id)
                         f.CountSeats++;
 
                     return f;
@@ -111,7 +111,7 @@ namespace BusStation.Services
             {
                 foreach (var f in flights)
                 {
-                    sw.WriteLine($"{f.Id.ToString()} {f.Point} {f.DepartureTime.Ticks} {f.CountSeats}");
+                    sw.WriteLine($"{f.Id} {f.Point} {f.DepartureTime} {f.CountSeats}");
                 }
             }
 
@@ -140,6 +140,18 @@ namespace BusStation.Services
             }
 
             return users.Any(u => u.Username.ToUpper() == username.ToUpper());
+        }
+
+        public int CheckTicketsCount(ICollection<Ticket> tickets)
+        {
+            if (tickets.Count == 0)
+            {
+                return 0;
+            }
+            else
+            {
+                return tickets.Last().Id + 1;
+            }
         }
     }
 }

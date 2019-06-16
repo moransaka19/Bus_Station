@@ -47,6 +47,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button5 = new System.Windows.Forms.Button();
             this.ticketsGridView = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumberFlight2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DepartureDate2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DepartureTime2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,7 +83,10 @@
             // 
             this.scheduleGridView.AllowUserToAddRows = false;
             this.scheduleGridView.AllowUserToDeleteRows = false;
+            this.scheduleGridView.AllowUserToResizeColumns = false;
+            this.scheduleGridView.AllowUserToResizeRows = false;
             this.scheduleGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.scheduleGridView.BackgroundColor = System.Drawing.Color.White;
             this.scheduleGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.scheduleGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NumberOfFlight,
@@ -93,6 +97,8 @@
             this.scheduleGridView.Location = new System.Drawing.Point(6, 72);
             this.scheduleGridView.Name = "scheduleGridView";
             this.scheduleGridView.ReadOnly = true;
+            this.scheduleGridView.RowHeadersVisible = false;
+            this.scheduleGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.scheduleGridView.Size = new System.Drawing.Size(737, 264);
             this.scheduleGridView.TabIndex = 5;
             this.scheduleGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.scheduleGridView_CellClick);
@@ -211,12 +217,15 @@
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.DarkGreen;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button2.Location = new System.Drawing.Point(8, 342);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(108, 50);
-            this.button2.TabIndex = 8;
+            this.button2.Size = new System.Drawing.Size(133, 50);
+            this.button2.TabIndex = 0;
             this.button2.Text = "Совершить покупку";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.MakePurchase);
             // 
             // tabPage2
@@ -233,20 +242,27 @@
             // 
             // button5
             // 
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button5.Location = new System.Drawing.Point(8, 342);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(128, 50);
-            this.button5.TabIndex = 1;
+            this.button5.TabIndex = 0;
             this.button5.Text = "Вернуть билет";
-            this.button5.UseVisualStyleBackColor = true;
+            this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.ReturnTicket_Click);
             // 
             // ticketsGridView
             // 
             this.ticketsGridView.AllowUserToAddRows = false;
             this.ticketsGridView.AllowUserToDeleteRows = false;
+            this.ticketsGridView.AllowUserToResizeColumns = false;
+            this.ticketsGridView.AllowUserToResizeRows = false;
+            this.ticketsGridView.BackgroundColor = System.Drawing.Color.White;
             this.ticketsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ticketsGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
             this.NumberFlight2,
             this.DepartureDate2,
             this.DepartureTime2,
@@ -254,9 +270,18 @@
             this.ticketsGridView.Location = new System.Drawing.Point(8, 6);
             this.ticketsGridView.Name = "ticketsGridView";
             this.ticketsGridView.ReadOnly = true;
+            this.ticketsGridView.RowHeadersVisible = false;
+            this.ticketsGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ticketsGridView.Size = new System.Drawing.Size(735, 289);
-            this.ticketsGridView.TabIndex = 0;
+            this.ticketsGridView.TabIndex = 1;
             this.ticketsGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellClick);
+            // 
+            // Id
+            // 
+            this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
             // 
             // NumberFlight2
             // 
@@ -292,6 +317,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(763, 426);
             this.Controls.Add(this.tabControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "CashboxForm";
             this.Text = "Личный кабинет";
@@ -322,10 +348,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DepartureDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn DepartureTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn CountOfEmptySeats;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumberFlight2;
         private System.Windows.Forms.DataGridViewTextBoxColumn DepartureDate2;
         private System.Windows.Forms.DataGridViewTextBoxColumn DepartureTime2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Point2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

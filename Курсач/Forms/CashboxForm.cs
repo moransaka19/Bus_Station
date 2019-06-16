@@ -31,6 +31,7 @@ namespace BusStation
         private int _countOfSeats;
 
         private int _id;
+        private int _numberOfFlightTicket;
 
         public CashboxForm(User user)
         {
@@ -85,8 +86,20 @@ namespace BusStation
 
         private void MakePurchase(object sender, EventArgs e)
         {
-            _userService.Save(_ticketService.Create(_numberOfFlight, _point, _departureTime, _countOfSeats));
-            MessageBox.Show("Покупка совершена");
+            if (DateTime.Now.Ticks > _departureTime.Ticks)
+            {
+                MessageBox.Show("Пожалуйста выбирете рейс");
+            }
+            else
+            {
+                _userService.Save(_ticketService.Create
+                    (_userService.CheckTicketsCount(User.Tickets),
+                    _numberOfFlight,
+                    _point,
+                    _departureTime));
+                MessageBox.Show("Покупка совершена");
+            }
+            
             Update();
         }
 
@@ -114,7 +127,7 @@ namespace BusStation
 
             foreach (var i in User.Tickets)
             {
-                ticketsGridView.Rows.Add(i.FlightNumber, i.DepartureTime.ToShortDateString(), i.DepartureTime.ToShortTimeString(), i.Point);
+                ticketsGridView.Rows.Add(i.Id, i.FlightNumber, i.DepartureTime.ToShortDateString(), i.DepartureTime.ToShortTimeString(), i.Point);
             }
 
             var flights = _flightService.GetAll().Where(f =>
@@ -132,13 +145,14 @@ namespace BusStation
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = this.ticketsGridView.Rows[e.RowIndex];
-                _id = int.Parse(row.Cells["NumberFlight2"].Value.ToString());
+                _id = (int)row.Cells["Id"].Value;
+                _numberOfFlightTicket = (int)row.Cells["NumberFlight2"].Value;
             }
         }
 
         private void ReturnTicket_Click(object sender, EventArgs e)
         {
-            if (_userService.RemoveTicket(_id))
+            if (_userService.RemoveTicket(_id, _numberOfFlightTicket))
             {
                 MessageBox.Show("Билет был успешно возращен");
             }

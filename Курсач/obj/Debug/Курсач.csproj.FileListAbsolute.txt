@@ -22,3 +22,7 @@ D:\Projects\C#\Bus_Station\Курсач\obj\Debug\Курсач.pdb
 D:\Projects\c#\Bus_Station\Курсач\obj\Debug\BusStation.CashboxForm.resources
 D:\Projects\c#\Bus_Station\Курсач\obj\Debug\Курсач.Forms.RegisterForm.resources
 D:\Projects\c#\Bus_Station\Курсач\obj\Debug\BusStation.LogInForm.resources
+D:\Projects\C#\Bus_Station\Курсач\bin\Debug\Курсач.exe.manifest
+D:\Projects\C#\Bus_Station\Курсач\bin\Debug\Курсач.application
+D:\Projects\C#\Bus_Station\Курсач\obj\Debug\Курсач.exe.manifest
+D:\Projects\C#\Bus_Station\Курсач\obj\Debug\Курсач.application

@@ -132,7 +132,8 @@ namespace BusStation
 
             var flights = _flightService.GetAll().Where(f =>
                 f.Point == _city
-                && f.DepartureTime >= DateTime.Parse($"{_date} {_time}"));
+                && f.DepartureTime.Ticks >= DateTime.Parse($"{_date} {_time}").Ticks
+                && f.DepartureTime.Ticks >= DateTime.Now.Ticks);
 
             foreach (var i in flights)
             {

@@ -111,7 +111,7 @@ namespace BusStation.Services
             {
                 foreach (var f in flights)
                 {
-                    sw.WriteLine($"{f.Id} {f.Point} {f.DepartureTime} {f.CountSeats}");
+                    sw.WriteLine($"{f.Id} {f.Point} {f.DepartureTime.Ticks} {f.CountSeats}");
                 }
             }
 
